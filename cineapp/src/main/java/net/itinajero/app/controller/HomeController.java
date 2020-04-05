@@ -67,7 +67,8 @@ public class HomeController {
 		try {			
 			Date fechaSinHora = dateFormat.parse(dateFormat.format(fecha));
 			List<String> listaFechas = Utileria.getNextDays(4);
-			List<Pelicula> peliculas  = servicePeliculas.buscarPorFecha(fechaSinHora);
+			//List<Pelicula> peliculas  = servicePeliculas.buscarPorFecha(fechaSinHora);
+			List<Pelicula> peliculas  = servicePeliculas.buscarTodas();
 			model.addAttribute("fechas", listaFechas);			
 			// Regresamos la fecha que selecciono el usuario con el mismo formato
 			model.addAttribute("fechaBusqueda",dateFormat.format(fecha));			
