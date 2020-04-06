@@ -105,6 +105,12 @@ public class HomeController {
 		return "acerca";
 	}
 	
+	@RequestMapping(value="/formLogin", method=RequestMethod.GET)
+	public String mostrarLogin()
+	{
+		return "formLogin";
+	}
+	
 	@ModelAttribute("noticias")
 	public List<Noticia> getNoticias(){
 		return serviceNoticias.buscarUltimas();
