@@ -24,7 +24,13 @@
 		<div class="container theme-showcase" role="main">
 			<hr class="featurette-divider">
 			<img src="images/login.png" width="136" height="136" class="center">
-			<form class="form-signin" action="${urlRoot}login" method="post">        
+			<form class="form-signin" action="${urlRoot}login" method="post">     
+			  
+			 	<c:if test="${param.error!= null}">
+					<img src="${urlPublic}/images/error.png" width="48" height="48" class="center">
+					<h4 class="form-signin-heading" style="color:red">Acceso denegado</h4>
+				</c:if>
+				
 				<h3 class="form-signin-heading">CineSite | Administracion</h3>        
 				<label for="username" class="sr-only">Usuario</label>
 				<input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required autofocus>
@@ -33,7 +39,7 @@
 				<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 			</form>
-
+    
 		</div> <!-- /container -->
 		<!-- Bootstrap core JavaScript
 		================================================== -->
